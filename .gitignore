@@ -1,2 +1,5 @@
 **/pyinstaller
 *.spec
+
+**/dist
+**/build
