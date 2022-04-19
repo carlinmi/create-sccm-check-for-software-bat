@@ -1,5 +1,10 @@
 import subprocess
 import re
+from datetime import datetime
+
+# generate a timestamp for the file
+now = datetime.now()
+str_now = now.strftime('%H-%M-%S_%a%b%m-%Y')
 
 # find the correct drive letter and return it
 def get_removable_disk_drive_leter():
@@ -17,6 +22,6 @@ def get_removable_disk_drive_leter():
 # generate the .bat file with the correct drive letter
 drive_letter = get_removable_disk_drive_leter()
 
-with open(f'{drive_letter}:\sccm-check-for-software.bat', "w") as file:
+with open(f'{drive_letter}:\sccm-check-for-software_{str_now}.bat', "w") as file:
     file.write(f'powershell.exe -executionpolicy bypass -File "{drive_letter}:\\sccm-check-for-software\\sccm-check-for-software.ps1"') 
 
