@@ -23,5 +23,5 @@ def get_removable_disk_drive_leter():
 drive_letter = get_removable_disk_drive_leter()
 
 with open(f'{drive_letter}:\{drive_letter}_drive-sccm-check-for-software.bat', "w") as file:
-    file.write(f'powershell.exe -executionpolicy bypass -File "{drive_letter}:\\sccm-check-for-software\\sccm-check-for-software.ps1"') 
+    file.write(f'powershell.exe -executionpolicy bypass -File "{drive_letter}:\\Scripts\\sccm-check-for-software.ps1"') 
 
